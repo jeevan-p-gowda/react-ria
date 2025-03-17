@@ -24,7 +24,10 @@ function ProductList(){
     }];
     return (
         <div>
-            {plist.map((item) => (<Product pdata ={item}
+            {plist.map((item) => (
+            <Product 
+            key={item.productId}
+            pdata ={item}
             btnClick={(id)=>console.log('add item',id)} />))}
         </div>
     );
