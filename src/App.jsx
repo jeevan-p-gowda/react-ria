@@ -1,12 +1,12 @@
 import './App.css'
 import Demo from './Demo'
-import Product from './components/Product'
+import ProductList from './containers/ProductList'
 
 function App() {
 
   return (<div>
     <Demo />
-    <Product/>
+    <ProductList/>
   </div>)
   
 }
