@@ -10,7 +10,8 @@ function ProductList(){
     }
     return (
         <div>
-            <Product pdata ={plist} />
+            <Product pdata ={plist}
+            btnClick={(id)=>console.log('add item',id)} />
         </div>
     );
 }
