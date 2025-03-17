@@ -1,11 +1,5 @@
-function Product(){
-    const data = {
-        productId: 1,
-        productName: "Laptop",
-        productPrice: 50000,
-        productImage: "",
-        productStock: 10,
-    }
+function Product(props){
+    const data = props.pdata
 
     return (
         <div>
