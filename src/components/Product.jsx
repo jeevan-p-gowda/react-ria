@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Card from './Card';
 
 function Product(props){
@@ -11,7 +12,9 @@ function Product(props){
 
     return (
         <Card>
-            <img src={data.productImage} />
+            <Link to={`/details/${data.productId}`}>
+                <img src={data.productImage} />
+            </Link>
             <h4>{data.productName}</h4>
             <h5>Price: {data.productPrice}</h5>
             {renderStock()}
