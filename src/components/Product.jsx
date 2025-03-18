@@ -1,3 +1,5 @@
+import Card from './Card';
+
 function Product(props){
     const data = props.pdata
     const renderStock = () => {
@@ -8,12 +10,12 @@ function Product(props){
     };
 
     return (
-        <div>
+        <Card>
             <img src={data.productImage} />
             <h4>{data.productName}</h4>
             <h5>Price: {data.productPrice}</h5>
             {renderStock()}
-        </div>
+        </Card>
     )
 }
 
