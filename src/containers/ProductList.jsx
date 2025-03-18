@@ -1,27 +1,9 @@
 import Product from "../components/Product";
+import useProducts from "../hooks/useProducts";
 
 function ProductList(){
-    const plist = [{
-        productId: 1,
-        productName: "Laptop",
-        productPrice: 50000,
-        productImage: "",
-        productStock: 10,
-    },
-    {
-        productId: 2,
-        productName: "Mobile",
-        productPrice: 15000,
-        productImage: "",
-        productStock: 0,
-    },
-    {
-        productId: 3,
-        productName: "Tablet",
-        productPrice: 20000,
-        productImage: "",
-        productStock: 5,
-    }];
+    const {plist, loading} = useProducts();
+    if (loading) return <h1>Loading...</h1>;
     return (
         <div>
             {plist.map((item) => (
