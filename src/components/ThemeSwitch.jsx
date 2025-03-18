@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "../context";
 
 function ThemeSwitch(props) {
-  const [theme, setTheme] = useState("light");
+  const theme = useContext(ThemeContext);
+  const altTheme = theme === "light" ? "dark" : "light";
   useEffect(() => {
     document.body.style.backgroundColor = theme === "light" ? "#fff" : "#333";
   }, [theme]);
   
-  if (theme === "light") {
-    return <button onClick={() => {setTheme("dark"); props.changeTheme("dark");}}>Dark Mode</button>;
-  }
-    return <button onClick={() => {setTheme("light");props.changeTheme("light");}}>Light Mode</button>;
+  return (
+    <button onClick={() => props.changeTheme(altTheme)}>
+      {altTheme}
+    </button>
+  );
 }
 
 export default ThemeSwitch;
